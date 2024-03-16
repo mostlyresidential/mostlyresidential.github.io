@@ -16,7 +16,7 @@ Stefan Grabarczyk
 
 ### [1 519 852 3083](tel: 1 519 852 3083)
 
-### [\[email protected\]](/cdn-cgi/l/email-protection#72111d1c06131106321f1d01061e0b0017011b16171c061b131e02131b1c061b1c155c1113)
+### [contact@mostlyresidentialpainting.ca](mailto: contact@mostlyresidentialpainting.ca)
 
 ### [Click Here to send us a Text Message !](sms:15198523083)
 
