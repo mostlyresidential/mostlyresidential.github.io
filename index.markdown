@@ -15,6 +15,7 @@ Designated by Benjamin Moore, we are always punctual, reliable and our quality 
 </center>
 
 Stefan Grabarczyk
+{: style="text-align: center"}
 -----------------
 
 
