@@ -15,8 +15,8 @@ Designated by Benjamin Moore, we are always punctual, reliable and our quality 
 </center>
 
 Stefan Grabarczyk
-{: style="text-align: center"}
 -----------------
+{: style="text-align: center"}
 
 
 ### [1 519 852 3083](tel: 1 519 852 3083)
@@ -55,4 +55,3 @@ Servicing London Ontario and Middlesex County
 *   **Book a free estimate**
 *   **Request a call back**
 *   **Send us a message**
-
