@@ -3,6 +3,9 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+permalink: /
+title: "Mostly Residential"
+description: Mostly Residental London Ontario
 ---
 
 Established in 1995 by Stefan Grabarczyk, Mostly Residential is a reputable house painting service in London Ontario We paint interior and exterior surfaces, perform drywall repairs, wallpaper removal and installation, power washing, deck staining and much more!
