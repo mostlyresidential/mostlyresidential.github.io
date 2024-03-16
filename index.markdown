@@ -3,11 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-text-align: center
 ---
 
+<center>
+Established in 1995 by Stefan Grabarczyk, Mostly Residential is a reputable house painting service in London Ontario We paint interior and exterior surfaces, perform drywall repairs, wallpaper removal and installation, power washing, deck staining and much more!{:text-align: center;"}
 
-Established in 1995 by Stefan Grabarczyk, Mostly Residential is a reputable house painting service in London Ontario We paint interior and exterior surfaces, perform drywall repairs, wallpaper removal and installation, power washing, deck staining and much more!  
 
 Designated by Benjamin Moore, we are always punctual, reliable and our quality workmanship speaks for itself. Call us for a free quote today!  
 
@@ -43,3 +43,4 @@ Products and Services
 *   **Request a call back**
 *   **Send us a message**
 
+</center>
