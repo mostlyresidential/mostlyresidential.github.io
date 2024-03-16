@@ -65,3 +65,7 @@ search_enabled: false
 # ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
 timezone: America/Toronto
+
+google:
+  tag_manager:
+    container_id: GTM-TLS9DN
