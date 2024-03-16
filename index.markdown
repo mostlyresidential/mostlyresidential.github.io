@@ -32,6 +32,7 @@ Products and Services
 ---------------------
 {: .text-center	}
 
+
 *   Exterior / Interior / Commercial / Industrial
 *   Certified & Experienced
 *   Insured & WSIB
@@ -45,14 +46,16 @@ Products and Services
 *   Sandblasting
 *   Mold & Odor Removal
 *   Power Washing
-{: .text-center	}
+{: .text-left	}
+
 
 
 Servicing London Ontario and Middlesex County
 {: .text-center	}
 
 
+
 *   **Book a free estimate**
 *   **Request a call back**
 *   **Send us a message**
-{: .text-center	}
+{: .text-left	}
