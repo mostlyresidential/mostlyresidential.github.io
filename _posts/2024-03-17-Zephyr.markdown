@@ -339,3 +339,121 @@ main
  In progress
 testing
 {% endhighlight %}
+
+
+{% highlight ruby %}
+┌──(user㉿none)-[~/golioth-firmware-sdk/tools/net-tools]
+└─$ sudo ./stunnel.sh
+2024.03.17 05:23:26 LOG5[ui]: stunnel 5.72 on x86_64-pc-linux-gnu platform
+2024.03.17 05:23:26 LOG5[ui]: stunnel 5.72 on x86_64-pc-linux-gnu platform
+2024.03.17 05:23:26 LOG5[ui]: Compiled/running with OpenSSL 3.1.5 30 Jan 2024
+2024.03.17 05:23:26 LOG5[ui]: Compiled/running with OpenSSL 3.1.5 30 Jan 2024
+2024.03.17 05:23:26 LOG5[ui]: Threading:PTHREAD Sockets:POLL,IPv6,SYSTEMD TLS:ENGINE,OCSP,PSK,SNI Auth:LIBWRAP
+2024.03.17 05:23:26 LOG5[ui]: Threading:PTHREAD Sockets:POLL,IPv6,SYSTEMD TLS:ENGINE,OCSP,PSK,SNI Auth:LIBWRAP
+2024.03.17 05:23:26 LOG5[ui]: Reading configuration from file /home/user/golioth-firmware-sdk/tools/net-tools/stunnel.conf
+2024.03.17 05:23:26 LOG5[ui]: Reading configuration from file /home/user/golioth-firmware-sdk/tools/net-tools/stunnel.conf
+2024.03.17 05:23:26 LOG5[ui]: UTF-8 byte order mark not detected
+2024.03.17 05:23:26 LOG5[ui]: UTF-8 byte order mark not detected
+2024.03.17 05:23:26 LOG5[ui]: FIPS mode disabled
+2024.03.17 05:23:26 LOG5[ui]: FIPS mode disabled
+2024.03.17 05:23:26 LOG4[ui]: Insecure file permissions on echo-apps-key.pem
+2024.03.17 05:23:26 LOG4[ui]: Insecure file permissions on echo-apps-key.pem
+2024.03.17 05:23:26 LOG4[ui]: Insecure file permissions on echo-apps-key.pem
+2024.03.17 05:23:26 LOG4[ui]: Insecure file permissions on echo-apps-key.pem
+2024.03.17 05:23:26 LOG5[ui]: Configuration successful
+2024.03.17 05:23:26 LOG5[ui]: Configuration successful
+{% endhighlight %}
+
+{% highlight ruby %}
+└─$  ./echo-server -p 4244 -i tap0
+IPv4: binding to 192.0.2.2
+IPv6: binding to 2001:db8::2
+Sockets: UPD IPv4 3 IPv6 4, mcast IPv4 5 IPv6 6, TCP IPv4 7 IPv6 8
+Socket 3 binding to 192.0.2.2
+Socket 4 binding to 2001:db8::2
+Socket 5 binding to 239.192.0.2
+Socket 6 binding to ff84::2
+Socket 7 binding to 192.0.2.2
+Socket 8 binding to 2001:db8::2
+{% endhighlight %}
+
+
+{% highlight ruby %}
+┌──(user㉿none)-[~/golioth-firmware-sdk/tools/net-tools]
+└─$ ./loop-ppp-dev.sh
+{% endhighlight %}
+
+{% highlight ruby %}
+└─$ sudo ./loop-pppd.sh
+[sudo] password for user: 
+using channel 1
+Using interface ppp0
+Connect: ppp0 <--> /dev/pts/24
+{% endhighlight %}
+
+{% highlight ruby %}
+
+└─$ sudo ./echo-client -i tap0 2001:db8::2
+Binding to 2001:db8::2
+Timeout while waiting idx 0 len 1
+Timeout while waiting idx 1 len 6
+Timeout while waiting idx 2 len 4
+Timeout while waiting idx 3 len 26
+Timeout while waiting idx 4 len 1500
+Timeout while waiting idx 5 len 1
+Timeout while waiting idx 6 len 256
+
+No packets sent!
+
+# https://github.com/zephyrproject-rtos/net-tools
+{% highlight ruby %}
+PPP Connectivity
+You can test the PPP connectivity running in Qemu in Zephyr using pppd that is running in Linux host. You need to run socat and pppd to create a minimally working network setup.
+
+There are convenience scripts (loop-ppp-dev.sh and loop-pppd.sh) for running socat and pppd processes. For running these, you need two terminals.
+
+Terminal 1:
+
+$ ./loop-ppp-dev.sh
+Terminal 2:
+
+$ sudo ./loop-pppd.sh
+After this, start PPP enabled Zephyr application. For example Zephyr echo-server sample in samples/net/sockets/echo_server has overlay-ppp.conf file that enables PPP support.
+
+# pppd conf removed . Wiped from https://github.com/zephyrproject-rtos/zephyr/tree/main and google
+{% endhighlight %}                                
+┌──(.venv)─(user㉿none)-[~/…/samples/net/sockets/echo_server]
+└─$ west build -b qemu_x86 . -- -DCONF_FILE="prj.conf overlay-ppp.conf" 
+-- west build: generating a build system
+Loading Zephyr default modules (Zephyr base).                                                                                  
+-- Application: /home/user/golioth-firmware-sdk/zephyr/samples/net/sockets/echo_server
+-- CMake version: 3.28.3
+-- Found Python3: /home/user/golioth-firmware-sdk/.venv/bin/python3 (found suitable version "3.11.8", minimum required is "3.8") found components: Interpreter 
+-- Cache files will be written to: /home/user/.cache/zephyr
+-- Zephyr version: 3.6.0 (/home/user/golioth-firmware-sdk/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: qemu_x86
+-- Found host-tools: zephyr 0.16.5 (/home/user/zephyr-sdk-0.16.5-1)
+-- Found toolchain: zephyr 0.16.5 (/home/user/zephyr-sdk-0.16.5-1)
+-- Found Dtc: /home/user/zephyr-sdk-0.16.5-1/sysroots/x86_64-pokysdk-linux/usr/bin/dtc (found suitable version "1.6.0", minimum required is "1.4.6") 
+-- Found BOARD.dts: /home/user/golioth-firmware-sdk/zephyr/boards/x86/qemu_x86/qemu_x86.dts
+-- Generated zephyr.dts: /home/user/golioth-firmware-sdk/zephyr/samples/net/sockets/echo_server/build/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: /home/user/golioth-firmware-sdk/zephyr/samples/net/sockets/echo_server/build/zephyr/include/generated/devicetree_generated.h
+-- Including generated dts.cmake file: /home/user/golioth-firmware-sdk/zephyr/samples/net/sockets/echo_server/build/zephyr/dts.cmake
+CMake Error at /home/user/golioth-firmware-sdk/zephyr/cmake/modules/kconfig.cmake:289 (message):
+  File not found:                                                                                                              
+  /home/user/golioth-firmware-sdk/zephyr/samples/net/sockets/echo_server/overlay-ppp.conf                                      
+Call Stack (most recent call first):                                                                                           
+  /home/user/golioth-firmware-sdk/zephyr/cmake/modules/zephyr_default.cmake:129 (include)                                      
+  /home/user/golioth-firmware-sdk/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)                            
+  /home/user/golioth-firmware-sdk/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)                
+  CMakeLists.txt:5 (find_package)                                                                                              
+                                                                                                                               
+                                                                                                                               
+-- Configuring incomplete, errors occurred!
+FATAL ERROR: command exited with status 1: /usr/bin/cmake -DWEST_PYTHON=/home/user/golioth-firmware-sdk/.venv/bin/python3 -B/home/user/golioth-firmware-sdk/zephyr/samples/net/sockets/echo_server/build -GNinja -DBOARD=qemu_x86 '-DCONF_FILE=prj.conf overlay-ppp.conf' -S/home/user/golioth-firmware-sdk/zephyr/samples/net/sockets/echo_server            
+{% endhighlight %}
+
+{% highlight ruby %}
+
+{% endhighlight %}
