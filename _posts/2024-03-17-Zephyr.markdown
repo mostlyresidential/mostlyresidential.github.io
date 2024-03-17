@@ -307,9 +307,6 @@ Call Stack (most recent call first):
 CMake Generate step failed.  Build files cannot be regenerated correctly.
 FATAL ERROR: command exited with status 1: /usr/bin/cmake -DWEST_PYTHON=/home/user/golioth-firmware-sdk/.venv/bin/python3 -B/home/user/golioth-firmware-sdk/modules/lib/golioth-firmware-sdk/examples/zephyr/hello/build -GNinja -DBOARD=qemu_x86 -S/home/user/golioth-firmware-sdk/modules/lib/golioth-firmware-sdk/examples/zephyr/hello                                                
 {% endhighlight %}
-
-
-
 -- west build: running target run
 [0/1] To exit from QEMU enter: 'CTRL+a, x'[QEMU] CPU: qemu32,+nx,+pae
 SeaBIOS (version zephyr-v1.0.0-0-g31d4e0e-dirty-20200714_234759-fv-az50-zephyr)
@@ -332,3 +329,13 @@ Booting from ROM..
 uart:~$ net
 {% endhighlight %}
 
+{% highlight ruby %}
+79 workflow runs
+This workflow has a workflow_dispatch event trigger.
+Master Branch
+Deploy Jekyll site to Pages #79: Commit 67a6b54 pushed by mostlyresidential
+main	
+ now
+ In progress
+testing
+{% endhighlight %}
