@@ -9,6 +9,6 @@ categories: jekyll update
 def print_hi(name)
   puts "Hi, #{name}"
 end
-print_hi('Tom')
+print_hi('')
 #=> prints 'Hi, ' to STDOUT.
 {% endhighlight %}
